@@ -1,26 +1,83 @@
 const parseNA = string => (string === 'NA' ? undefined : string);
 const parseDate = string => d3.timeParse('%Y-%m-%d')(string);
 
-d3.csv('/static/database/movies.csv', type).then(
-    res => {
-        ready(res);
-    }
-);
+var startYear = 2000
+var endYear = 2010
+var selectedGenres = []
 
-function ready(movies) {
-    const moviesClean = filterData(movies);
+$(function() {
+    loadStatistics(startYear, endYear, selectedGenres);
+
+    $('input:checkbox').on('change', function() {
+        var elementId = $(this).attr('id');
+        if ($(this)[0].checked) {
+            selectedGenres.push(elementId);
+            console.log(selectedGenres);
+        }
+        else {
+            selectedGenres = selectedGenres.filter(function(e) { return e !== elementId });
+            console.log(selectedGenres);
+        }
+
+        loadStatistics(startYear, endYear, selectedGenres);
+    });
+
+    $('select').on('change', function() {
+        if ($(this).attr('id') === 'startYear') {
+            if (parseInt($(this).val()) > endYear) {
+                alert('Start year cannot be greater than end year!')
+                $(this).val(startYear);
+            }
+            else {
+                startYear = parseInt($(this).val());
+            }
+        }
+        else {
+            if (parseInt($(this).val()) < startYear) {
+                alert('End year cannot be smaller than start year!');
+                $(this).val(endYear);
+            }
+            else {
+                endYear = parseInt($(this).val());
+            }
+        }
+
+        loadStatistics(startYear, endYear, selectedGenres);
+    });
+
+    $(".trigger_popup_fricc").on('click', function(){
+        $('.hover_bkgr_fricc').show();
+     });
+     $('.hover_bkgr_fricc').on('click', function(){
+         $('.hover_bkgr_fricc').hide();
+     });
+     $('.popupCloseButton').on('click', function(){
+         $('.hover_bkgr_fricc').hide();
+     });
+});
+
+function loadStatistics(startYear, endYear, selectedGenres) {
+    d3.csv('/static/database/movies.csv', type).then(
+        res => {
+            ready(res, startYear, endYear, selectedGenres);
+        }
+    );
+}
+
+function ready(movies, startYear, endYear, selectedGenres) {
+    const moviesClean = filterData(movies, startYear, endYear, selectedGenres);
     const barChartData = prepareBarChartData(moviesClean).sort(
         (a, b) => {
             return d3.descending(a.revenue, b.revenue);
         }
     );
-    console.log(barChartData);
     setupCanvas(barChartData);
 }
 
 function setupCanvas(barChartData) {
-    const svg_width = 400;
-    const svg_height = 500;
+    d3.select('.bar-chart-container').html("");
+    const svg_width = 900;
+    const svg_height = 600;
     const chart_margin = {
         top: 80,
         right: 40,
@@ -60,7 +117,7 @@ function setupCanvas(barChartData) {
                     .attr('transform', `translate(0, ${-chart_margin.top / 2})`)
                     .append('text');
     header.append('tspan').text('Total revenue by genre in $US');
-    header.append('tspan').text('Years: 2000-2009')
+    header.append('tspan').text(`Years: ${startYear}-${endYear}`)
             .attr('x', 0).attr('y', 20).style('font-size', '0.8em').style('fill', '#555');
 
     const xAxis = d3.axisTop(xScale_v3)
@@ -87,7 +144,6 @@ function formatTicks(d) {
 }
 
 function prepareBarChartData(data) {
-    console.log(data);
     const dataMap = d3.rollup(
         data,
         v => d3.sum(v, leaf => leaf.revenue),
@@ -123,14 +179,15 @@ function type(d) {
     }
 }
 
-function filterData(data) {
+function filterData(data, startYear, endYear, selectedGenres) {
     return data.filter(
         d => {
             return (
-                d.release_year > 1999 && d.release_year < 2010 &&
+                d.release_year >= startYear && d.release_year <= endYear &&
                 d.revenue > 0 &&
                 d.budget > 0 &&
                 d.genre &&
+                selectedGenres.indexOf(d.genre.toLowerCase()) != -1 &&
                 d.title
             );
         }

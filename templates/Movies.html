@@ -3,14 +3,130 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Movie Revenue Visualization</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/css/Movies.css">
     </head>
     <body>
+        <div class="header">
+            <h1>Movies Revenue Statistics in US</h1>
+        </div>
+
         <div class="bar-chart-container"></div>
+
+        <div class="row">
+            <div class="column">
+                <form class="genreSelector">
+                    <input type="checkbox" id="adventure">
+                    <label for="adventure">Adventure</label><br>
+                    <input type="checkbox" id="action">
+                    <label for="action">Action</label><br>
+                    <input type="checkbox" id="comedy">
+                    <label for="comedy">Comedy</label><br>
+                    <input type="checkbox" id="drama">
+                    <label for="drama">Drama</label><br>
+                    <input type="checkbox" id="animation">
+                    <label for="animation">Animation</label><br>
+                    <input type="checkbox" id="fantasy">
+                    <label for="fantasy">Fantasy</label><br>
+                    <input type="checkbox" id="thriller">
+                    <label for="thriller">Thriller</label><br>
+                    <input type="checkbox" id="horror">
+                    <label for="horror">Horror</label><br>
+                    <input type="checkbox" id="crime">
+                    <label for="crime">Crime</label><br>
+                    <input type="checkbox" id="science">
+                    <label for="science">Science</label><br>
+                    <input type="checkbox" id="family">
+                    <label for="family">Family</label><br>
+                    <input type="checkbox" id="romance">
+                    <label for="romance">Romance</label><br>
+                    <input type="checkbox" id="mystery">
+                    <label for="mystery">Mystery</label><br>
+                    <input type="checkbox" id="history">
+                    <label for="history">History</label><br>
+                    <input type="checkbox" id="music">
+                    <label for="music">Music</label><br>
+                    <input type="checkbox" id="war">
+                    <label for="war">War</label><br>
+                    <input type="checkbox" id="documentary">
+                    <label for="documentary">Documentary</label><br>
+                    <input type="checkbox" id="western">
+                    <label for="western">Western</label><br>
+                    <input type="checkbox" id="foreign">
+                    <label for="foreign">Foreign</label><br>
+                </form>
+            </div>
+            <div class="column">
+                <form class="yearSelector">
+                    <label for="startYear">Choose start year:</label>
+                    <select name="startYear" id="startYear">
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000" selected="selected">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                    </select> <br><br>
+                    <label for="endYear">Choose end year:</label>
+                    <select name="endYear" id="endYear">
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010" selected="selected">2010</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h2>Description</h2>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Styles of the page.</li>
+                    <li>Styles on the header bar.</li>
+                    <li>The grenre selector</li>
+                    <li>The year slector</li>
+                    <li>The popup window that shows the description of additional features.</li>
+                </ul>
+            </div>
+        </div>
         
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="//unpkg.com/d3"></script>
         <script src="/static/js/Movies.js"></script>
     </body>

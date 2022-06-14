@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <title>Galaxy Tours</title>
         <link rel="stylesheet" href="/static/css/Galaxy.css">
-        <script src="https://unpkg.com/vue@next"></script>
     </head>
     <body>
-        <h1>Galaxy Tour</h1>
+        <div class="header">
+            <h1>Galaxy Tour</h1>
+        </div>
         <div id="app">
             <h2 :class="h2ClassController">{{productName}}</h2>
             <p :style="pStyleController">{{productDescription}}</p>
@@ -19,6 +20,7 @@
                     <td>
                         <button style="width: 35%" v-if="productClass.earlyBird">Book Earlybird!</button>
                         <button style="width: 35%" v-else>Book</button>&nbsp;
+                        <br>
                         <span v-show="productClass.seatsAvailable < 10" style="color:red">
                         Almost Sold out!
                         </span>
@@ -32,6 +34,25 @@
                 :title="imageAlt">
 
         </div>
+
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h2>Description</h2>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Styles of the page.</li>
+                    <li>Styles on the header bar.</li>
+                    <li>The grenre selector</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
         <script src="/static/js/Galaxy.js"></script>
     </body>
 </html>

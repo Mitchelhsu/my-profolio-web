@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>YouTube Player</title>
+        <link rel="stylesheet" href="/static/css/YTPlayer.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="https://www.youtube.com/"><img src="/static/css/images/YTLogo.png" alt=""></a>
+        </div>
+        
+        <div id="player"></div>
+        <h2></h2>
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+        <input type="button" id="playButton" value="Play">
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h3>Description</h3>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Style of the page mimics real YouTube style.</li>
+                    <li>Styles on the header bar.</li>
+                    <li>Styles on all the buttons.</li>
+                    <li>The popup window that shows the description of additional features.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="/static/js/YTPlayer.js"></script>
+        <script src="/static/js/playList.js"></script>
+    </body>
+</html>

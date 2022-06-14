@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dinner Picker</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/DinnerPicker.css">
+    </head>
+    <body class="text-center">
+        <div class="header">
+            <h1>What's dinner for tonight?</h1>
+        </div>
+
+        <div>
+            <ul class="food">
+                <li class="foodli">Hot Dog</li>
+                <li class="foodli">Chicken Breast</li>
+                <li class="foodli">Salad</li>
+            </ul>
+        </div>
+
+        <div class="image">
+            <img src="/static/css/images/question.jpeg" alt="Food will be displayed here">
+        </div>
+
+        <div>
+            <input id="picker" type="button" value="Pick">
+        </div>
+
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h2>Description</h2>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Styles of the page.</li>
+                    <li>Styles on the header bar.</li>
+                    <li>Styles on the Pick button, including hover animation and shadow etc.</li>
+                    <li>The animation of the unordered list when pciker dinner.</li>
+                    <li>The popup window that shows the description of additional features.</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/DinnerPicker.js"></script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Club Course</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/ClubCourse.css">
+    </head>
+    <body>
+        <div class="header"><h1>Club Course Schedule</h1></div>
+
+        <div class="datePick">
+            <p id="info">Please choose the starting date of your schedule: 
+                <input type="date" id="datePicker">
+            </p>
+        </div>
+
+        <table id="courseTable"></table>
+
+        <div class="buttons">
+            <button id="btnEdit">Edit</button>
+            <button id="btnCancel">Cancel</button>
+            <button id="btnDone">Save</button>
+        </div>
+
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h2>Description</h2>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Style of the page.</li>
+                    <li>Styles on the header bar.</li>
+                    <li>Added editing features that allow users to edit topics & start date.</li>
+                    <li>After you finished editing, you can either save(Save button or Enter key) or discard(Cancel button or Esc) the changes you've made.</li>
+                    <li>Styles on all the buttons, including hover animation and shadow etc.</li>
+                    <li>The popup window that shows the description of additional features.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/clubTopics.js"></script>
+        <script src="/static/js/ClubCourse.js"></script>
+    </body>
+</html>

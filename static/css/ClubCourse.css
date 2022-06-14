@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    color: white;
+    overflow: hidden;
+    background-color: rgb(77, 77, 77);
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    color: rgb(60, 60, 60);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+.datePick {
+    color: rgb(6, 95, 150);
+}
+
+.hover_bkgr_fricc{
+    color: #555;
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    top: 50px;
+    width: 60%;
+    height: 30%;
+    position: relative;
+    border-radius: 8px;
+    padding: 5px 5%;
+}
+
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 15px;
+    /* margin: 20px; */
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.trigger_wrapper {
+    color: rgb(0, 96, 174);
+    visibility: hidden;
+}
+
+.description {
+    text-align: left;
+    
+}
+
+ul.features {
+    font-weight: bold;
+}
+
+table {
+    width: 40%;
+    margin: auto;
+    font-size: 1.5em;
+    border-collapse: collapse;
+    visibility: hidden;
+}
+
+tr:nth-child(1) {
+    background-color: rgba(62, 62, 62, 0.867);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #dddd;
+}
+
+td.rowDel {
+    background-color: white;
+    width: 10px;
+    visibility: hidden;
+}
+
+div.buttons {
+    margin-top: 10px;
+}
+
+button {
+    background-color: rgb(6, 95, 150);
+    color: white;
+    font-size: 15px;
+    border-style: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(6, 95, 150);
+    color: white;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(192, 189, 189);
+}
+
+button:active {
+    opacity: 0.5;
+}
+
+#btnEdit {
+    position: absolute;
+    left: 48%;
+    visibility: hidden;
+}
+
+#btnDone {
+    position: realtive;
+    visibility: hidden;
+}
+
+#btnCancel {
+    position: relative;
+    visibility: hidden;
+}

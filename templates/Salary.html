@@ -2,10 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Salary Estimation</title>
+        <link rel="stylesheet" href="/static/css/Salary.css">
     </head>
     <body>
-        <h1></h1>
+        <div class="header">
+            <h1>Salary Estimation</h1>
+        </div>
         <div id="app">
             姓名 : <input type="text" v-model="name"><br><br>
             <input type="radio" v-model="graduationIndex" value="0"><label for="bachelor">大學</label>
@@ -21,11 +24,28 @@
                 </option>
             </select>
             <br><br>
-            <button @click="displaySummary">摘要</button> {{summary}}
+            <button @click="displaySummary">摘要</button> <br> {{summary}}
             <br><br>
             <button @click="calculate">起薪計算</button>
             <span v-show="showResult"> NT${{result_realtime.toLocaleString('zh-TW')}}</span>
         </div>
+
+        <p class="trigger_wrapper"><a class="trigger_popup_fricc">CLICK HERE</a> for more information.</p>
+
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div class="description">
+                <div class="popupCloseButton">&times;</div>
+                <h2>Description</h2>
+                <p>In this lab, I added the features below</p>
+                <ul class="features">
+                    <li>Styles of the page.</li>
+                    <li>Styles on the header bar.</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="//unpkg.com/vue@next"></script>
         <script src="/static/js/Salary.js"></script>
     </body>
